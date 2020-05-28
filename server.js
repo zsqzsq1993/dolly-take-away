@@ -4,8 +4,8 @@ const statics = require('koa-static')
 const consola = require('consola')
 const data = require('./data')
 
-const HOST = process.env.HOST || 'localhost'
-const PORT = process.env.PORT || 8900
+const HOST = 'localhost'
+const PORT = 8080
 const goods = data.goods
 const seller = data.seller
 const ratings = data.ratings

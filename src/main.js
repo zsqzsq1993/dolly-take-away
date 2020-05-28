@@ -9,7 +9,7 @@ import './assets/css/global/index.scss'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios.create({
-  baseURL: 'http://localhost:8900/api'
+  baseURL: 'http://localhost:8080/api'
 })
 
 new Vue({
