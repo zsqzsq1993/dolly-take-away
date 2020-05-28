@@ -5,11 +5,21 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "report": "vue-cli-service build --report"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "better-scroll": "^1.15.2",
+    "consola": "^2.12.2",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11"
+    "cube-ui": "~1.12.15",
+    "koa": "^2.12.0",
+    "koa-router": "^8.0.8",
+    "koa-static": "^5.0.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.6",
+    "vuex": "^3.4.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",
@@ -25,6 +35,15 @@
     "eslint-plugin-vue": "^6.2.2",
     "sass": "^1.26.3",
     "sass-loader": "^8.0.2",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-cli-plugin-cube-ui": "~0.2.5",
     "vue-template-compiler": "^2.6.11"
+  },
+  "transformModules": {
+    "cube-ui": {
+      "transform": "cube-ui/src/modules/${member}",
+      "kebabCase": true
+    }
   }
 }
