@@ -1,29 +1,27 @@
 const express = require('express')
-
+const data = require('./data')
+const port = 9001
+const goods = data.goods
+const seller = data.seller
+const ratings = data.ratings
 const app = express()
-
-const appData = require('./data.json')
-const seller = appData.seller
-const goods = appData.goods
-const ratings = appData.ratings
-
 const router = express.Router()
 
-router.get('/seller', function (req, res) {
+router.get('/seller', (req, res) => {
   res.json({
     errno: 0,
     data: seller
   })
 })
 
-router.get('/goods', function (req, res) {
+router.get('/goods', (req, res) => {
   res.json({
     errno: 0,
     data: goods
   })
 })
 
-router.get('/ratings', function (req, res) {
+router.get('/ratings', (req, res) => {
   res.json({
     errno: 0,
     data: ratings
@@ -34,12 +32,10 @@ app.use('/api', router)
 
 app.use(express.static('./dist'))
 
-const port = process.env.PORT || 8080
-
-module.exports = app.listen(port, function (err) {
+app.listen(port, (err) => {
   if (err) {
     console.log(err)
-    return
+  } else {
+    console.log('listen at http://localhost:' + port)
   }
-  console.log('Listening at http://localhost:' + port + '\n')
 })

@@ -31,7 +31,7 @@
       }
     },
     async created() {
-      const { status, data: { errno, data } } = await this.$axios.get('seller')
+      const { status, data: { errno, data } } = await this.$axios.get('/seller')
       if (status === 200 && errno === ERR_OK) {
         this.seller = data
       }

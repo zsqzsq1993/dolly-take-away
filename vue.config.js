@@ -4,6 +4,7 @@ const ratings = data.ratings
 const goods = data.goods
 
 module.exports = {
+  publicPath: '',
   css: {
     loaderOptions: {
       stylus: {

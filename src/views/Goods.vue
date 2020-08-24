@@ -156,7 +156,7 @@
       }
     },
     async created() {
-      const { status, data: { errno, data } } = await this.$axios.get('goods')
+      const { status, data: { errno, data } } = await this.$axios.get('/goods')
       if (status === 200 && errno === ERR_OK) {
         this.foodList = data
         this.menuList = data.map(item => {

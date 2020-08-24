@@ -4,12 +4,15 @@ import router from './router/index'
 import axios from 'axios'
 import './register'
 import './cube-ui'
-
 import './assets/css/global/index.scss'
+
+const baseURL = process.env.NODE_ENV === 'production'
+  ? 'http://106.53.250.228/take-away/api'
+  : '/api'
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios.create({
-  baseURL: 'http://106.53.118.169:8080/api' // 本地开发localhost
+  baseURL
 })
 
 new Vue({
