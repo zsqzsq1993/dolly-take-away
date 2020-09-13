@@ -1,5 +1,12 @@
 const express = require('express')
 const data = require('./data')
+const https = require('https')
+const fs = require('fs')
+const credential = {
+  key: fs.readFileSync('/etc/nginx/2_dollylosingweight.today.key'),
+  cert: fs.readFileSync('/etc/nginx/1_dollylosingweight.today_bundle.crt')
+}
+
 const port = 9001
 const goods = data.goods
 const seller = data.seller
@@ -32,10 +39,12 @@ app.use('/api', router)
 
 app.use(express.static('./dist'))
 
-app.listen(port, (err) => {
+const httpsServer = https.createServer(credential, app)
+
+httpsServer.listen(port, (err) => {
   if (err) {
     console.log(err)
   } else {
-    console.log('listen at http://localhost:' + port)
+    console.log('listen at https://localhost:' + port)
   }
 })
