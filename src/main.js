@@ -7,7 +7,7 @@ import './cube-ui'
 import './assets/css/global/index.scss'
 
 const baseURL = process.env.NODE_ENV === 'production'
-  ? 'http://dollylosingweight.today/take-away/api'
+  ? 'https://dollylosingweight.today/take-away/api'
   : '/api'
 
 Vue.config.productionTip = false
